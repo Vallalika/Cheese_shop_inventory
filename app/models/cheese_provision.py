@@ -1,4 +1,4 @@
-class cheese_provision():
+class CheeseProvision():
     
     def __init__(self, cheese, provider, id = None):
         self.cheese = cheese
