@@ -5,17 +5,19 @@
 2. Create Planning documents - 2.5 hours on Saturday
 
     --> UX documents (week_4 > day_4 > UX Design + Canvas)
-    a. Complete 1 user persona template - Done
+
+    a. Complete 1 user persona template - Find pic and make prettier if time
     b. Complete 1 user needs template - Done
     c. Create 1 use case diagram with PDA template - Done
     e. Get a rough idea of the front-end in terms of colours and style - Done
     f. Create a low-fi wireframe, to be refined later on, then make a med-fi later on - Done
-    d. Create 1 activity diagram with PDA template - 
-    h. Complete 1 user journey template - 
     i. Complete 1 wireframe - Done
-    g. Create implementations' constraints plan based on PDA template - 
+    d. Create 1 activity diagram with PDA template - later
+    h. Complete 1 user journey template - later
+    g. Create implementations' constraints plan based on PDA template - later
 
-3. Create classes, objects and table diagrams (arrows should be in there for the PDA, at least 3 or 4 classes would be useful) - 2 hours on Saturday
+3. Create classes, objects and table diagrams - 2 hours on Saturday
+Classes ok, Objects to do later for PDA, table diagrams on paper only
 
 4. Create a list of routes and a user sitemap for the MVP - 2.5 hours on Saturday
 
