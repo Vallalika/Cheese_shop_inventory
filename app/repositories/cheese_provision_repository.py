@@ -7,6 +7,10 @@ def save(cheese_provision):
     id = results[0]['id']
     cheese_provision.id = id
 
+def delete_all():
+    sql = "DELETE FROM cheese_provisions"
+    run_sql(sql)
+
 # def select_all():
 #     humans = []
 #     sql = "SELECT * FROM humans"

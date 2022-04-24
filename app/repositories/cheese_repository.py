@@ -8,6 +8,10 @@ def save(cheese):
     id = results[0]['id']
     cheese.id = id
 
+def delete_all():
+    sql = "DELETE FROM cheeses"
+    run_sql(sql)
+
 # def select_all():
 #     humans = []
 #     sql = "SELECT * FROM humans"
@@ -24,11 +28,6 @@ def save(cheese):
 #     result = run_sql(sql, values)[0]
 #     human = Human(result["name"], result["id"])
 #     return human
-
-
-# def delete_all():
-#     sql = "DELETE FROM humans"
-#     run_sql(sql)
 
 
 # def delete(id):

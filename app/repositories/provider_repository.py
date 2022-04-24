@@ -7,6 +7,10 @@ def save(provider):
     id = results[0]['id']
     provider.id = id
 
+def delete_all():
+    sql = "DELETE FROM providers"
+    run_sql(sql)
+
 # def select_all():
 #     humans = []
 #     sql = "SELECT * FROM humans"
