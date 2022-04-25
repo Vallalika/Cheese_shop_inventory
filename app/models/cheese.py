@@ -1,6 +1,6 @@
 class Cheese():
     
-    def __init__ (self, name, origin, type, description, stock, buying_cost, selling_cost, providers = None, id = None):
+    def __init__ (self, name, origin, type, description, stock, buying_cost, selling_cost, id = None):
         self.name = name
         self.origin = origin
         self.type = type

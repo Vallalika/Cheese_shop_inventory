@@ -2,7 +2,7 @@
 
 
 {% block header %}
-    <h1>All Cheeses</h1>
+    <h1> All Cheeses </h1>
 {% endblock %}
 
 
@@ -10,22 +10,30 @@
     
     <table>    
         <tr>
+            <th> ID </th>
             <th> Name </th>
             <th> Origin </th>
             <th> Description </th>
             <th> Stock </th>
-            <th> buying_cost </th>
-            <th> selling_price </th>
+            <th> Buying Cost </th>
+            <th> Selling Price </th>
+            <th> Actions </th>
+
         </tr>
 
         {% for cheese in all_cheeses %}
         <tr>
+            <td> {{ cheese.id }} </td>
             <td> {{ cheese.name }} </td>
             <td> {{ cheese.origin }} </td>
             <td> {{ cheese.description }} </td>
             <td> {{ cheese.stock }} </td>
-            <td> {{ cheese.buying_cost }} </td>
-            <td> {{ cheese.selling_price }} </td>
+            <td> £{{ cheese.buying_cost }} </td>
+            <td> £{{ cheese.selling_price }} </td>
+            <td>
+                <a href = "/cheeses/{{ cheese.id }}/edit"> Edit </a>
+                <a href = "/cheeses/{{ cheese.id }}/delete"> Delete </a>
+            </td>
         </tr>
         {% endfor %}
 

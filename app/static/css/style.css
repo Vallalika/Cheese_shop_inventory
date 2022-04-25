@@ -1,11 +1,11 @@
 .grid-container {
     display: grid;
-    min-width: 100vh;
-    min-height: 100vh;
+    /* min-width: 100vh;
+    min-height: 100vh; */
     grid-template-columns: 1fr 9fr;
     grid-template-rows: auto, 1fr, auto;
     grid-template-areas:
-        "grid-header grid-header"
+        "grid-menu grid-header"
         "grid-menu grid-main"
         "grid-footer grid-footer";
 }

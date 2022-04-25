@@ -1,6 +1,6 @@
 class Provider():
 
-    def __init__(self, name, type, country, address, cheeses = None, id = None):
+    def __init__(self, name, type, country, address, id = None):
         self.name = name
         self.type = type
         self.country = country
