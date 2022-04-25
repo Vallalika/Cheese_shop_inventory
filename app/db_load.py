@@ -35,3 +35,15 @@ provider_repository.update(normandie_farm)
 
 camembert_normandie.provider = normandie_farm
 cheese_provision_repository.update(camembert_normandie)
+
+my_cheese = cheese_repository.select(camembert.id)
+print(my_cheese.__dict__)
+
+my_provider = provider_repository.select(normandie_farm.id)
+print(my_provider.__dict__)
+
+my_provision = cheese_provision_repository.select(camembert_normandie.id)
+print("Here's my provision dict", my_provision.__dict__)
+print("Here's the cheese name", my_provision.cheese.name)
+print("Here's the provider name", my_provision.provider.name)
+

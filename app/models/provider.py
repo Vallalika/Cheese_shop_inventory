@@ -5,5 +5,4 @@ class Provider():
         self.type = type
         self.country = country
         self.address = address
-        self.cheeses = cheeses
         self.id = id

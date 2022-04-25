@@ -22,13 +22,12 @@ def update(cheese):
     values = [cheese.name, cheese.origin, cheese.type, cheese.description, cheese.stock, cheese.buying_cost, cheese.selling_price, cheese.id]
     run_sql(sql, values)
 
-# # TO TEST
-# def select(id):
-#     sql = "SELECT * FROM cheeses WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-#     cheese = Cheese(result["name"], result["origin"], result["type"], result["description"], result["stock"], result["buying_cost"],result["selling_price"], result["id"])
-#     return cheese
+def select(id):
+    sql = "SELECT * FROM cheeses WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    cheese = Cheese(result["name"], result["origin"], result["type"], result["description"], result["stock"], result["buying_cost"],result["selling_price"], result["id"])
+    return cheese
 
 # def select_all():
 #     humans = []
@@ -38,5 +37,4 @@ def update(cheese):
 #         human = Human(result["name"], result["id"])
 #         humans.append(human)
 #     return humans
-
 

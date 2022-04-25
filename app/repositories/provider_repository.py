@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+from models.provider import Provider
 
 def save(provider):
     sql = "INSERT INTO providers (name, type, country, address) VALUES (%s, %s, %s, %s) RETURNING id"
@@ -21,6 +22,13 @@ def update(provider):
     values = [provider.name, provider.type, provider.country, provider.address, provider.id]
     run_sql(sql, values)
 
+def select(id):
+    sql = "SELECT * FROM providers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    provider = Provider(result["name"], result["type"], result["country"], result["address"], result["id"])
+    return provider
+
 # def select_all():
 #     humans = []
 #     sql = "SELECT * FROM humans"
@@ -29,11 +37,3 @@ def update(provider):
 #         human = Human(result["name"], result["id"])
 #         humans.append(human)
 #     return humans
-
-
-# def select(id):
-#     sql = "SELECT * FROM humans WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-#     human = Human(result["name"], result["id"])
-#     return human
