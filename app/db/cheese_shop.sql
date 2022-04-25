@@ -24,6 +24,6 @@ CREATE TABLE providers (
 
 CREATE TABLE cheese_provisions (
     id SERIAL PRIMARY KEY,
-    cheese_id SERIAL REFERENCES cheeses(id),
-    provider_id SERIAL REFERENCES providers(id)
+    cheese_id INT REFERENCES cheeses(id) ON DELETE CASCADE,
+    provider_id INT REFERENCES providers(id) ON DELETE CASCADE
 );

@@ -11,6 +11,16 @@ def delete_all():
     sql = "DELETE FROM cheese_provisions"
     run_sql(sql)
 
+def delete(id):
+    sql = "DELETE FROM cheese_provisions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def update(cheese_provision):
+    sql = "UPDATE cheese_provisions SET (cheese_id, provider_id) = (%s, %s) WHERE id = %s"
+    values = [cheese_provision.cheese.id, cheese_provision.provider.id, cheese_provision.id]
+    run_sql(sql, values)
+
 # def select_all():
 #     humans = []
 #     sql = "SELECT * FROM humans"
@@ -27,20 +37,3 @@ def delete_all():
 #     result = run_sql(sql, values)[0]
 #     human = Human(result["name"], result["id"])
 #     return human
-
-
-# def delete_all():
-#     sql = "DELETE FROM humans"
-#     run_sql(sql)
-
-
-# def delete(id):
-#     sql = "DELETE FROM humans WHERE id = %s"
-#     values = [id]
-#     run_sql(sql, values)
-
-
-# def update(human):
-#     sql = "UPDATE humans SET name = %s WHERE id = %s"
-#     values = [human.name, human.id]
-#     run_sql(sql, values)
