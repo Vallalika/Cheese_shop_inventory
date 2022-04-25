@@ -29,11 +29,11 @@ def select(id):
     provider = Provider(result["name"], result["type"], result["country"], result["address"], result["id"])
     return provider
 
-# def select_all():
-#     humans = []
-#     sql = "SELECT * FROM humans"
-#     results = run_sql(sql)
-#     for result in results:
-#         human = Human(result["name"], result["id"])
-#         humans.append(human)
-#     return humans
+def select_all():
+    providers = []
+    sql = "SELECT * FROM providers"
+    results = run_sql(sql)
+    for result in results:
+        provider = Provider(result["name"], result["type"],  result["country"],  result["address"], result["id"])
+        providers.append(provider)
+    return providers

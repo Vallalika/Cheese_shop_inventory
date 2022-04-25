@@ -29,12 +29,11 @@ def select(id):
     cheese = Cheese(result["name"], result["origin"], result["type"], result["description"], result["stock"], result["buying_cost"],result["selling_price"], result["id"])
     return cheese
 
-# def select_all():
-#     humans = []
-#     sql = "SELECT * FROM humans"
-#     results = run_sql(sql)
-#     for result in results:
-#         human = Human(result["name"], result["id"])
-#         humans.append(human)
-#     return humans
-
+def select_all():
+    cheeses = []
+    sql = "SELECT * FROM cheeses"
+    results = run_sql(sql)
+    for result in results:
+        cheese = Cheese(result["name"], result["origin"], result["type"], result["description"], result["stock"], result["buying_cost"],result["selling_price"], result["id"])
+        cheeses.append(cheese)
+    return cheeses

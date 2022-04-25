@@ -33,13 +33,15 @@ def select(id):
     cheese_provision = CheeseProvision(cheese, provider, result["id"])
     return cheese_provision
 
-# def select_all():
-#     humans = []
-#     sql = "SELECT * FROM humans"
-#     results = run_sql(sql)
-#     for result in results:
-#         human = Human(result["name"], result["id"])
-#         humans.append(human)
-#     return humans
+def select_all():
+    provisions = []
+    sql = "SELECT * FROM cheese_provisions"
+    results = run_sql(sql)
+    for result in results:
+        cheese = cheese_repository.select(result["cheese_id"])
+        provider = provider_repository.select(result["provider_id"])
+        provision = CheeseProvision(cheese, provider, result["id"])
+        provisions.append(provision)
+    return provisions
 
 

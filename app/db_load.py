@@ -21,6 +21,15 @@ brittany_farm = Provider("Brittany's a great holiday place", "Souvenirs shop", "
 camembert_normandie = CheeseProvision(camembert, brittany_farm)
 cheese_provision_repository.save(camembert_normandie)
 
+cheddar = Cheese("Cheddar", "United Kingdom", "Pasteurized Cow's Milk", "Hard cheese, off-white or orange, and sometimes sharp-tasting.", 5, 8.00, 14.00)
+cheese_repository.save(cheddar)
+
+somerset_farm = Provider("The Somerset Cheddar Farm", "Farmer", "England", "A village in Somerset")
+provider_repository.save(somerset_farm)
+
+cheddar_somerset = CheeseProvision(cheddar, somerset_farm)
+cheese_provision_repository.save(cheddar_somerset)
+
 # cheese_provision_repository.delete(camembert_normandie.id)
 
 # cheese_repository.delete(camembert.id)
@@ -36,14 +45,29 @@ provider_repository.update(normandie_farm)
 camembert_normandie.provider = normandie_farm
 cheese_provision_repository.update(camembert_normandie)
 
-my_cheese = cheese_repository.select(camembert.id)
-print(my_cheese.__dict__)
+# my_cheese = cheese_repository.select(camembert.id)
+# print(my_cheese.__dict__)
 
-my_provider = provider_repository.select(normandie_farm.id)
-print(my_provider.__dict__)
+# my_provider = provider_repository.select(normandie_farm.id)
+# print(my_provider.__dict__)
 
-my_provision = cheese_provision_repository.select(camembert_normandie.id)
-print("Here's my provision dict", my_provision.__dict__)
-print("Here's the cheese name", my_provision.cheese.name)
-print("Here's the provider name", my_provision.provider.name)
+# my_provision = cheese_provision_repository.select(camembert_normandie.id)
+# print("Here's my provision dict", my_provision.__dict__)
+# print("Here's the cheese name", my_provision.cheese.name)
+# print("Here's the provider name", my_provision.provider.name)
 
+# cheeses = cheese_repository.select_all()
+
+# for cheese in cheeses:
+#     print(cheese.__dict__)
+
+# providers = provider_repository.select_all()
+
+# for provider in providers:
+#     print(provider.__dict__)
+
+# cheese_provisions = cheese_provision_repository.select_all()
+# for provision in cheese_provisions:
+#     print(provision.__dict__)
+#     print(provision.cheese.name)
+#     print(provision.provider.name)
