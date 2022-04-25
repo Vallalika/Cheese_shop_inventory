@@ -5,7 +5,45 @@
 {% endblock %}
 
 {% block content %}
-
-Test
+    <table>
+        <form action="/cheeses/{{ cheese.id }}" method="POST">
+            <tr>
+                <td> <label for="name">Name:</label> </td>
+                <td> <input type="text" id="name" name="name" value="{{ cheese.name }}"> </td>
+            </tr>
+            <tr>
+                <td> <label for="origin">Origin:</label> </td>
+                <td> <input type="text" id="origin" name="origin" value="{{ cheese.origin }}"> </td>
+            </tr>
+            <tr>
+                <td> <label for="type">Type:</label> </td>
+                <td><input type="text" id="type" name="type" value="{{ cheese.type }}"></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description:</label></td>
+                <td><input type="text" id="description" name="description" value="{{ cheese.description }}"></td>
+            </tr>
+            <tr>
+                <td> <label for="stock">Stock:</label> </td>
+                <td> <input type="text" id="stock" name="stock" value="{{ cheese.stock }}"> </td>
+            </tr>
+            <tr>
+                <td> <label for="buying_cost">Buying Cost:</label> </td>
+                <td> <input type="text" id="buying_cost" name="buying_cost" value="{{ cheese.buying_cost }}"> </td>
+            </tr>
+            <tr>
+                <td> <label for="selling_price">Selling price:</label> </td>
+                <td> <input type="text" id="selling_price" name="selling_price" value="{{ cheese.selling_price }}"> </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <form action="/cheeses">
+                        <input type="submit" value="Cancel">
+                    </form>
+                    <input type="submit" value="Update">
+                </td>
+            </tr>
+        </form>
+    </table>
 
 {% endblock %}
