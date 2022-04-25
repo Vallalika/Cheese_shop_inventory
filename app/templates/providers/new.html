@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1> Create new provider </h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <form action="/providers" method="POST">
+            <tr>
+                <td> <label for="name">Name:</label> </td>
+                <td> <input type="text" id="name" name="name"> </td>
+            </tr>
+            <tr>
+                <td> <label for="type">Type:</label> </td>
+                <td> <input type="text" id="type" name="type"> </td>
+            </tr>
+            <tr>
+                <td> <label for="country">Country:</label> </td>
+                <td><input type="text" id="country" name="country"></td>
+            </tr>
+            <tr>
+                <td> <label for="address">Address:</label> </td>
+                <td> <input type="text" id="address" name="address"> </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="/providers"> Cancel </a>
+                    <input type="submit" value="Create">
+                </td>
+            </tr>
+        </form>
+    </table>
+
+{% endblock %}
