@@ -1,6 +1,9 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    min-width: 100vh;
+    min-height: 100vh;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: auto, 1fr, auto;
     grid-template-areas:
         "grid-header grid-header"
         "grid-menu grid-main"
@@ -9,20 +12,21 @@
 
 .grid-header {
     grid-area: grid-header;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .grid-menu {
     grid-area: grid-menu;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .grid-main {
     grid-area: grid-main;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    overflow: auto;
 }
 
 .grid-footer {
     grid-area: grid-footer;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }

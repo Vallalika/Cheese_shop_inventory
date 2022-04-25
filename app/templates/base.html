@@ -11,13 +11,14 @@
     <body>
         <div class="grid-container">
             <header class="grid-header">
-                My logo and the screen's name will go here.
+                {% block header %}
+                {% endblock %}
             </header>
             <nav class="grid-menu">
                 <ul>
-                    <li>All Cheeses</li>
-                    <li>All Providers</li>
-                    <li>Inventory</li>
+                    <li> All Cheeses</li>
+                    <li> All Providers </li>
+                    <li> Inventory </li>
                 </ul>
             </nav>
             <main class="grid-main">
