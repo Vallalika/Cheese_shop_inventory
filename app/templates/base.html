@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+        <title>Inventory</title>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="grid-header">
+                My logo and the screen's name will go here.
+            </header>
+            <nav class="grid-menu">
+                <ul>
+                    <li>All Cheeses</li>
+                    <li>All Providers</li>
+                    <li>Inventory</li>
+                </ul>
+            </nav>
+            <main class="grid-main">
+                {% block content %}
+                {% endblock %}
+            </main>
+            <footer class="grid-footer">
+                Here's where my footer will go.
+            </footer>
+        </div>
+    </body>
+</html>
