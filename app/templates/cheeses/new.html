@@ -1,44 +1,44 @@
 {% extends "base.html" %}
 
 {% block header %}
-    <h1> Edit {{ cheese.name }}  </h1>
+    <h1> Create new cheese </h1>
 {% endblock %}
 
 {% block content %}
     <table>
-        <form action="/cheeses/{{ cheese.id }}" method="POST">
+        <form action="/cheeses" method="POST">
             <tr>
                 <td> <label for="name">Name:</label> </td>
-                <td> <input type="text" id="name" name="name" value="{{ cheese.name }}"> </td>
+                <td> <input type="text" id="name" name="name"> </td>
             </tr>
             <tr>
                 <td> <label for="origin">Origin:</label> </td>
-                <td> <input type="text" id="origin" name="origin" value="{{ cheese.origin }}"> </td>
+                <td> <input type="text" id="origin" name="origin"> </td>
             </tr>
             <tr>
                 <td> <label for="type">Milk:</label> </td>
-                <td><input type="text" id="type" name="type" value="{{ cheese.type }}"></td>
+                <td><input type="text" id="type" name="type"></td>
             </tr>
             <tr>
                 <td><label for="description">Description:</label></td>
-                <td><input type="text" id="description" name="description" value="{{ cheese.description }}"></td>
+                <td> <textarea cols = "50" rows = "4" name="description"></textarea> </td>
             </tr>
             <tr>
                 <td> <label for="stock">Stock:</label> </td>
-                <td> <input type="text" id="stock" name="stock" value="{{ cheese.stock }}"> </td>
+                <td> <input type="text" id="stock" name="stock"> </td>
             </tr>
             <tr>
                 <td> <label for="buying_cost">Buying Cost (per kg):</label> </td>
-                <td> <input type="text" id="buying_cost" name="buying_cost" value="{{ cheese.buying_cost }}"> </td>
+                <td> <input type="text" id="buying_cost" name="buying_cost"> </td>
             </tr>
             <tr>
                 <td> <label for="selling_price">Selling price (per kg):</label> </td>
-                <td> <input type="text" id="selling_price" name="selling_price" value="{{ cheese.selling_price }}"> </td>
+                <td> <input type="text" id="selling_price" name="selling_price"> </td>
             </tr>
             <tr>
                 <td colspan="2">
                     <a href="/cheeses"> Cancel </a>
-                    <input type="submit" value="Update">
+                    <input type="submit" value="Create">
                 </td>
             </tr>
         </form>
