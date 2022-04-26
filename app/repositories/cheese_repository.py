@@ -31,7 +31,7 @@ def select(id):
 
 def select_all():
     cheeses = []
-    sql = "SELECT * FROM cheeses"
+    sql = "SELECT * FROM cheeses ORDER BY stock"
     results = run_sql(sql)
     for result in results:
         cheese = Cheese(result["name"], result["origin"], result["type"], result["description"], result["stock"], result["buying_cost"],result["selling_price"], result["inventory_include"], result["id"])
