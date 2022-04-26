@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+    <h1> All Providers for {{ cheese.name }}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <table>    
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Type </th>
+            <th> Country </th>
+            <th> Address </th>
+            <th> Actions </th>
+
+        </tr>
+
+        {% for provision in provisions_by_cheese %}
+        <tr>
+            <td> {{ provision.id }} </td>
+            <td> {{ provision.provider.name }} </td>
+            <td> {{ provision.provider.type }} </td>
+            <td> {{ provision.provider.country }} </td>
+            <td> {{ provision.provider.address }} </td>
+            {# <td>
+                <a href = "/providers/{{ provider.id }}/edit"> Edit </a>
+                <form action="/providers/{{ provider.id }}/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td> #}
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

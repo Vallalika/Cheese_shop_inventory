@@ -44,4 +44,14 @@ def select_all():
         provisions.append(provision)
     return provisions
 
-
+def select_by_cheese_id(cheese_id):
+    provisions = []
+    sql = "SELECT * FROM cheese_provisions WHERE cheese_id = %s"
+    values = [cheese_id]
+    results = run_sql(sql, values)
+    for result in results:
+        cheese = cheese_repository.select(cheese_id)
+        provider = provider_repository.select(result["provider_id"])
+        provision = CheeseProvision(cheese, provider, result["id"])
+        provisions.append(provision)
+    return provisions

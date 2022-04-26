@@ -71,3 +71,16 @@ cheese_provision_repository.update(camembert_normandie)
 #     print(provision.__dict__)
 #     print(provision.cheese.name)
 #     print(provision.provider.name)
+
+### TEST for selecting providers by cheese ID
+
+french_importer = Provider("Fromage Import", "Importer", "France", "Paris")
+provider_repository.save(french_importer)
+
+camembert_import = CheeseProvision(camembert, french_importer)
+cheese_provision_repository.save(camembert_import)
+
+providers = cheese_provision_repository.select_by_cheese_id(camembert.id)
+
+for provider in providers:
+    print(provider.cheese.name, provider.provider.name)
