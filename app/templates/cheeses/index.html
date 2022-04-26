@@ -34,7 +34,7 @@
             <td> £{{ cheese.selling_price }} </td>
             <td>
                 <a href = "/cheese_provisions/{{ cheese.id }}/provisions_by_cheese"> View providers </a>
-                <a href = "/cheese_provisions/new_by_cheese"> Add providers </a>
+                <a href = "/cheese_provisions/{{ cheese.id}}/new_by_cheese"> Add provider </a>
                 <a href = "/cheeses/{{ cheese.id }}/edit"> Edit </a>
                 <form action="/cheeses/{{ cheese.id }}/delete" method="POST">
                     <input type="submit" value="Delete">

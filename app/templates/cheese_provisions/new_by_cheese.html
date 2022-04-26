@@ -6,7 +6,7 @@
 
 {% block content %}
     <table>
-        <form action="/cheese_provisions" method="POST">
+        <form action="/cheese_provisions/{{ cheese.id }}" method="POST">
             <tr>
                 <td> <label for="name">Name:</label> </td>
                 <td> <input type="text" id="name" name="name"> </td>
@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <a href="/providers"> Cancel </a>
+                    <a href="/cheeses"> Cancel </a>
                     <input type="submit" value="Create">
                 </td>
             </tr>
