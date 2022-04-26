@@ -11,7 +11,6 @@ app = Flask(__name__)
 app.register_blueprint(cheeses_blueprint)
 app.register_blueprint(providers_blueprint)
 app.register_blueprint(cheese_provisions_blueprint)
-# app.register_blueprint(zombie_types_blueprint)
 
 @app.route("/")
 def main():

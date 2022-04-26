@@ -30,3 +30,11 @@
     grid-area: grid-footer;
     /* border: 1px solid black; */
 }
+
+#highlighted-zero {
+    color: red;
+}
+
+#highlighted-low {
+    color: blue;
+}

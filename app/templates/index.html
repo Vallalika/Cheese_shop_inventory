@@ -15,7 +15,8 @@
             <th> Description </th>
             <th> Stock </th>
             <th> Buying Cost (per kg) </th>
-            <th> Selling Price (per kg)</th>
+            <th> Selling Price (per kg) </th>
+            <th> Cheese Provider </th>
             <th> Actions </th>
         </tr>
 
@@ -27,9 +28,18 @@
                     <td> {{ cheese.origin }} </td>
                     <td> {{ cheese.milk }} </td>
                     <td> {{ cheese.description }} </td>
-                    <td> {{ cheese.stock }} </td>
+
+                    {% if cheese.stock == 0 %}
+                        <td id="highlighted-zero"> {{ cheese.stock }} </td>
+                    {% elif cheese.stock < 10 %}
+                        <td id="highlighted-low"> {{ cheese.stock }} </td>
+                    {% else %}
+                        <td> {{ cheese.stock }} </td>
+                    {% endif %}
+
                     <td> £{{ cheese.buying_cost }} </td>
                     <td> £{{ cheese.selling_price }} </td>
+                    <!-- <td> £{{ cheese.provider.name }} </td> -->
                     <td>
                         <a href = #> Edit stock </a>
                         <a href = #> Take out from inventory </a>
