@@ -20,7 +20,7 @@
         </tr>
 
         {% for cheese in all_cheeses %}
-            {% if cheese.stock > 0 %}
+            {% if cheese.inventory_include == True %}
                 <tr>
                     <td> {{ cheese.id }} </td>
                     <td> {{ cheese.name }} </td>
@@ -32,10 +32,11 @@
                     <td> £{{ cheese.selling_price }} </td>
                     <td>
                         <a href = #> Edit stock </a>
+                        <a href = #> Take out from inventory </a>
                     </td>
                 </tr>
             {% endif %}
         {% endfor %}
      </table>
-       
+
 {% endblock %}

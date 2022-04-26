@@ -26,7 +26,8 @@ def create_cheese():
     stock = request.form["stock"]
     buying_cost = request.form["buying_cost"]
     selling_price = request.form["selling_price"]
-    cheese = Cheese(name, origin, type, description, stock, buying_cost, selling_price)
+    inventory_include = request.form["inventory_include"]
+    cheese = Cheese(name, origin, type, description, stock, buying_cost, selling_price, inventory_include)
     cheese_repository.save(cheese)
     return redirect("/cheeses")
 
@@ -46,7 +47,8 @@ def update_cheese(id):
     stock = request.form["stock"]
     buying_cost = request.form["buying_cost"]
     selling_price = request.form["selling_price"]
-    cheese = Cheese(name, origin, type, description, stock, buying_cost, selling_price, id)
+    inventory_include = request.form["inventory_include"]
+    cheese = Cheese(name, origin, type, description, stock, buying_cost, selling_price, inventory_include, id)
     cheese_repository.update(cheese)
     return redirect("/cheeses")
 

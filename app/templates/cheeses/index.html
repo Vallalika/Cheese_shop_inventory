@@ -18,6 +18,7 @@
             <th> Stock </th>
             <th> Buying Cost (per kg) </th>
             <th> Selling Price (per kg)</th>
+            <th> Include in Inventory? </th>
             <th> Actions </th>
 
         </tr>
@@ -32,6 +33,7 @@
             <td> {{ cheese.stock }} </td>
             <td> £{{ cheese.buying_cost }} </td>
             <td> £{{ cheese.selling_price }} </td>
+            <td> {{ cheese.inventory_include }} </td>
             <td>
                 <a href = "/cheese_provisions/{{ cheese.id }}/provisions_by_cheese"> View providers </a>
                 <a href = "/cheese_provisions/{{ cheese.id}}/new_by_cheese"> Add provider </a>
