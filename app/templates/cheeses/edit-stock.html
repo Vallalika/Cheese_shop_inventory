@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1> Edit {{ cheese.name }}'s stock  </h1>
+{% endblock %}
+
+{% block content %}
+    <form action="/cheeses/{{ cheese.id }}/stock" method="POST">
+        <label for="stock">Stock:</label>
+        <input type="text" id="stock" name="stock" value="{{ cheese.stock }}">
+        <br>
+        <a href="/"> Cancel </a>
+        <input type="submit" value="Update">
+    </form>
+
+{% endblock %}

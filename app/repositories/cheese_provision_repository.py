@@ -55,3 +55,32 @@ def select_by_cheese_id(cheese_id):
         provision = CheeseProvision(cheese, provider, result["id"])
         provisions.append(provision)
     return provisions
+
+def select_by_provider_id(provider_id):
+    # Create an empty list to append query results
+    provisions = []
+
+    # Get all cheeses provided by the same provider
+    sql = "SELECT * FROM cheese_provisions WHERE provider_id = %s"
+    values = [provider_id]
+
+    # Store cheese by provider in results
+    results = run_sql(sql, values)
+
+    # For each cheese in the results
+    for result in results:
+        
+        # Get the provider as an object
+        provider = provider_repository.select(provider_id)
+
+        # Get the cheese as an object using its id
+        cheese = cheese_repository.select(result["cheese_id"])
+
+        # Create provision using both cheese and provider objects
+        provision = CheeseProvision(cheese, provider, result["id"])
+
+        # Append provision to our provision list
+        provisions.append(provision)
+    
+    # Return our list of provisions
+    return provisions

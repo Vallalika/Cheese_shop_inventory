@@ -10,7 +10,6 @@
     <a href="/cheeses/new"> New cheese </a>
     <table>    
         <tr>
-            <th> ID </th>
             <th> Name </th>
             <th> Origin </th>
             <th> Milk </th>
@@ -25,7 +24,6 @@
 
         {% for cheese in all_cheeses %}
         <tr>
-            <td> {{ cheese.id }} </td>
             <td> {{ cheese.name }} </td>
             <td> {{ cheese.origin }} </td>
             <td> {{ cheese.milk }} </td>

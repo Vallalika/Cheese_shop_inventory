@@ -57,3 +57,26 @@ def update_cheese(id):
 def delete_cheese(id):
     cheese_repository.delete(id)
     return redirect("/cheeses")
+
+# EDIT STOCK
+@cheeses_blueprint.route("/cheeses/<id>/edit-stock")
+def edit_cheese_stock(id):
+    cheese = cheese_repository.select(id)
+    return render_template('cheeses/edit-stock.html', cheese = cheese)
+
+# UPDATE STOCK
+@cheeses_blueprint.route("/cheeses/<id>/stock", methods = ['POST'])
+def update_cheese_stock(id):
+    cheese = cheese_repository.select(id)
+    stock = request.form["stock"]
+    cheese.stock = stock
+    cheese_repository.update(cheese)
+    return redirect("/")
+
+# UPDATE INVENTORY_INCLUDE
+@cheeses_blueprint.route("/cheeses/<id>/inventory-exclude", methods = ['POST'])
+def update_inventory_include(id):
+    cheese = cheese_repository.select(id)
+    cheese.inventory_include = False
+    cheese_repository.update(cheese)
+    return redirect("/")

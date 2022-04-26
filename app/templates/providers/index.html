@@ -10,7 +10,6 @@
     <a href="/providers/new"> New provider </a>
     <table>    
         <tr>
-            <th> ID </th>
             <th> Name </th>
             <th> Type </th>
             <th> Country </th>
@@ -21,12 +20,14 @@
 
         {% for provider in all_providers %}
         <tr>
-            <td> {{ provider.id }} </td>
             <td> {{ provider.name }} </td>
             <td> {{ provider.type }} </td>
             <td> {{ provider.country }} </td>
             <td> {{ provider.address }} </td>
             <td>
+                <a href = "/cheese_provisions/{{ provider.id }}/provisions_by_provider"> View cheeses sold </a>
+                <br>
+                <a href = "/cheese_provisions/{{ provider.id}}/new_by_provider"> Add cheese </a>
                 <a href = "/providers/{{ provider.id }}/edit"> Edit </a>
                 <form action="/providers/{{ provider.id }}/delete" method="POST">
                     <input type="submit" value="Delete">

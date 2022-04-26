@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+    <h1> All Cheeses for {{ provider.name }}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <table>    
+        <tr>
+            <th> Name </th>
+            <th> Origin </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Stock </th>
+            <th> Buying Cost </th>
+            <th> Selling Price </th>
+            <th> Included in inventory </th>
+        </tr>
+
+        {% for provision in provisions_by_provider %}
+        <tr>
+            <td> {{ provision.cheese.name }} </td>
+            <td> {{ provision.cheese.origin }} </td>
+            <td> {{ provision.cheese.type }} </td>
+            <td> {{ provision.cheese.description }} </td>
+            <td> {{ provision.cheese.stock }} </td>
+            <td> {{ provision.cheese.buying_cost }} </td>
+            <td> {{ provision.cheese.selling_price }} </td>
+            <td> {{ provision.cheese.inventory_include }} </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

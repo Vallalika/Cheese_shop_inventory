@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1> Add new cheese to {{ provider.name }}'s provisions </h1>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <form action="/cheese_provisions/by-provider/{{ provider.id }}" method="POST">
+            <tr>
+                <td> <label for="name">Name:</label> </td>
+                <td> <input type="text" id="name" name="name"> </td>
+            </tr>
+            <tr>
+                <td> <label for="origin">Origin:</label> </td>
+                <td> <input type="text" id="origin" name="origin"> </td>
+            </tr>
+            <tr>
+                <td> <label for="type">Milk:</label> </td>
+                <td><input type="text" id="type" name="type"></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description:</label></td>
+                <td> <textarea cols = "50" rows = "4" name="description"></textarea> </td>
+            </tr>
+            <tr>
+                <td> <label for="stock">Stock:</label> </td>
+                <td> <input type="text" id="stock" name="stock"> </td>
+            </tr>
+            <tr>
+                <td> <label for="buying_cost">Buying Cost (per kg):</label> </td>
+                <td> <input type="text" id="buying_cost" name="buying_cost"> </td>
+            </tr>
+            <tr>
+                <td> <label for="selling_price">Selling price (per kg):</label> </td>
+                <td> <input type="text" id="selling_price" name="selling_price"> </td>
+            </tr>
+            <tr>
+                <td> <label for="inventory_include">Include in inventory?</label> </td>
+                <td> <input type="text" id="inventory_include" name="inventory_include"> </td>
+            </tr>
+                <td colspan="2">
+                    <a href="/providers"> Cancel </a>
+                    <input type="submit" value="Create">
+                </td>
+            </tr>
+        </form>
+    </table>
+
+{% endblock %}

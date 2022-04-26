@@ -8,7 +8,6 @@
     
     <table>    
         <tr>
-            <th> ID </th>
             <th> Name </th>
             <th> Origin </th>
             <th> Milk </th>
@@ -16,14 +15,12 @@
             <th> Stock </th>
             <th> Buying Cost (per kg) </th>
             <th> Selling Price (per kg) </th>
-            <th> Cheese Provider </th>
             <th> Actions </th>
         </tr>
 
         {% for cheese in all_cheeses %}
             {% if cheese.inventory_include == True %}
                 <tr>
-                    <td> {{ cheese.id }} </td>
                     <td> {{ cheese.name }} </td>
                     <td> {{ cheese.origin }} </td>
                     <td> {{ cheese.milk }} </td>
@@ -39,14 +36,14 @@
 
                     <td> £{{ cheese.buying_cost }} </td>
                     <td> £{{ cheese.selling_price }} </td>
-                    <!-- <td> £{{ cheese.provider.name }} </td> -->
                     <td>
-                        <a href = #> Edit stock </a>
-                        <a href = #> Take out from inventory </a>
+                        <a href = "/cheeses/{{ cheese.id }}/edit-stock"> Edit stock </a>
+                        <form action="/cheeses/{{ cheese.id }}/inventory-exclude" method="POST">
+                            <input type="submit" value="Exclude from inventory">
+                        </form>
                     </td>
                 </tr>
             {% endif %}
         {% endfor %}
-     </table>
-
+    </table>    
 {% endblock %}

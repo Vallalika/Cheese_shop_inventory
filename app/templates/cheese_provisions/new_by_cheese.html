@@ -6,7 +6,7 @@
 
 {% block content %}
     <table>
-        <form action="/cheese_provisions/{{ cheese.id }}" method="POST">
+        <form action="/cheese_provisions/by-cheese/{{ cheese.id }}" method="POST">
             <tr>
                 <td> <label for="name">Name:</label> </td>
                 <td> <input type="text" id="name" name="name"> </td>
