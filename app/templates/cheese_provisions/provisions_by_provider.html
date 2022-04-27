@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <a href = "/cheese_provisions/{{ provider.id}}/new_by_provider"> Add cheese </a>
+    <a href = "/cheese_provisions/{{ provider.id}}/add_by_provider"> Add cheese </a>
     <table>    
         <tr>
             <th> Name </th>
@@ -17,6 +17,7 @@
             <th> Buying Cost </th>
             <th> Selling Price </th>
             <th> Included in inventory </th>
+            <th> </th>
         </tr>
 
         {% for provision in provisions_by_provider %}
@@ -29,6 +30,11 @@
             <td> {{ provision.cheese.buying_cost }} </td>
             <td> {{ provision.cheese.selling_price }} </td>
             <td> {{ provision.cheese.inventory_include }} </td>
+            <td>
+                <form action="/cheese_provisions/{{ provider.id}}/{{ provision.id }} /delete-by-provider" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
         </tr>
         {% endfor %}
 

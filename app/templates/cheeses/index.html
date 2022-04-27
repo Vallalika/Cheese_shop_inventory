@@ -18,7 +18,7 @@
             <th> Buying Cost (per kg) </th>
             <th> Selling Price (per kg)</th>
             <th> Include in Inventory? </th>
-            <th> Actions </th>
+            <th> </th>
 
         </tr>
 
@@ -34,7 +34,7 @@
             <td> {{ cheese.inventory_include }} </td>
             <td>
                 <a href = "/cheese_provisions/{{ cheese.id }}/provisions_by_cheese"> View providers </a>
-                <a href = "/cheese_provisions/{{ cheese.id}}/new_by_cheese"> Add provider </a>
+                <a href = "/cheese_provisions/{{cheese.id}}/add_by_cheese"> Add provider </a>
                 <a href = "/cheeses/{{ cheese.id }}/edit"> Edit </a>
                 <form action="/cheeses/{{ cheese.id }}/delete" method="POST">
                     <input type="submit" value="Delete">

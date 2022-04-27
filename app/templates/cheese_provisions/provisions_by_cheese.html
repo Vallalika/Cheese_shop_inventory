@@ -13,7 +13,7 @@
             <th> Type </th>
             <th> Country </th>
             <th> Address </th>
-            <th> Actions </th>
+            <th>  </th>
 
         </tr>
 
@@ -23,6 +23,11 @@
             <td> {{ provision.provider.type }} </td>
             <td> {{ provision.provider.country }} </td>
             <td> {{ provision.provider.address }} </td>
+            <td>
+                <form action="/cheese_provisions/{{ cheese.id}}/{{ provision.id }}/delete-by-cheese" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
         </tr>
         {% endfor %}
 
