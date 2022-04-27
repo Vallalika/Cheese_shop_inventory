@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 
 {% block header %}
-    <h1> Add new cheese to {{ provider.name }}'s provisions </h1>
+    <h1> Add new cheese to {{ provider.name }} </h1>
 {% endblock %}
 
 {% block content %}
     <table>
         <form action="/cheese_provisions/by-provider/{{ provider.id }}" method="POST">
             <tr>
-                <td> <label for="name">Name:</label> </td>
-                <td> <input type="text" id="name" name="name"> </td>
+                <td> <label for="name"> Name: </label> </td>
+                <td> <input type="text" id="name" name="name"> </input> </td>
+            </tr>    
+                <td> <label for="origin"> Origin: </label> </td>
+                <td> <input type="text" id="origin" name="origin"> </td>
             </tr>
             <tr>
                 <td> <label for="origin">Origin:</label> </td>

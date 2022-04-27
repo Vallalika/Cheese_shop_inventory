@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1> Add new cheese to {{ provider.name }}'s supply' </h1>
+{% endblock %}
+
+{% block content %}
+        <form action="/cheese_provisions/by-provider/existing-cheese/{{provider.id}}" method="POST">
+            <label for="cheese_id">Select a cheese </label>
+            <select name="cheese_id" id="cheese_id">
+                    
+                {% for cheese in all_cheeses %}
+                    <option value="{{ cheese.id }}"> {{ cheese.name }} </option>
+                {% endfor %}
+
+            </select>
+            <br>
+            <a href="/providers"> Cancel </a>
+            <input type="submit" value="Save">
+        </form>
+
+        or
+
+        <br>
+        <a href="/cheese_provisions/{{ provider.id }}/new_by_provider"> Create new cheese for provider </a>
+
+
+
+{% endblock %}

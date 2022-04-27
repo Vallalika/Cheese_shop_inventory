@@ -57,15 +57,26 @@ def provisions_by_provider(provider_id):
     provider = provider_repository.select(provider_id)
     return render_template("cheese_provisions/provisions_by_provider.html", provisions_by_provider=provisions, provider = provider)
 
-# NEW by provider
+# NEW by provider - to select from existing cheeses
+@cheese_provisions_blueprint.route("/cheese_provisions/<provider_id>/add_by_provider")
+def add_by_provider(provider_id):
+    cheeses = cheese_repository.select_all()
+    provider = provider_repository.select(provider_id)
+    provider_id = provider_id
+    return render_template('cheese_provisions/add_by_provider.html', provider=provider, all_cheeses = cheeses)
+
+# NEW by provider - to create a completely new cheese
 @cheese_provisions_blueprint.route("/cheese_provisions/<provider_id>/new_by_provider")
 def new_by_provider(provider_id):
     provider = provider_repository.select(provider_id)
     return render_template('cheese_provisions/new_by_provider.html', provider=provider)
 
-# CREATE provision by provider
+# CREATE provision by provider (new)
 @cheese_provisions_blueprint.route("/cheese_provisions/by-provider/<provider_id>", methods = ["POST"])
 def create_provision_by_provider(provider_id):
+
+    # # Getting all_cheeses
+    # cheeses = cheese_repository.select_all()
 
     # Getting provider object from relevant repo
     provider = provider_repository.select(provider_id)
@@ -86,6 +97,30 @@ def create_provision_by_provider(provider_id):
 
     # Retrieving cheese from db
     cheese = cheese_repository.select(cheese.id)
+
+    # Creating provision with cheese and provider objects, and saving it to db
+
+    cheese_provision = CheeseProvision(cheese,provider)
+    cheese_provision_repository.save(cheese_provision)
+
+    # Getting all provisions to render relevant template
+    provisions = cheese_provision_repository.select_by_provider_id(provider_id)
+
+    # Rendering template with all data
+    return render_template("cheese_provisions/provisions_by_provider.html", provider = provider, provisions_by_provider=provisions)
+
+# CREATE provision by provider (existing cheese)
+@cheese_provisions_blueprint.route("/cheese_provisions/by-provider/existing-cheese/<provider_id>", methods = ["POST"])
+def add_provision_by_provider(provider_id):
+
+    # Getting provider object from relevant repo
+    provider = provider_repository.select(provider_id)
+
+    # Getting cheese data from form
+    cheese_id = request.form["cheese_id"]
+
+    # Retrieving cheese from db
+    cheese = cheese_repository.select(cheese_id)
 
     # Creating provision with cheese and provider objects, and saving it to db
 
