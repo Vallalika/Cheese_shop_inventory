@@ -7,7 +7,7 @@
 {% block content %}
     
     <table>    
-        <tr>
+        <tr class="header-table-row">
             <th> Name </th>
             <th> Origin </th>
             <th> Milk </th>
@@ -23,7 +23,7 @@
                 <tr>
                     <td> {{ cheese.name }} </td>
                     <td> {{ cheese.origin }} </td>
-                    <td> {{ cheese.milk }} </td>
+                    <td> {{ cheese.type }} </td>
                     <td> {{ cheese.description }} </td>
 
                     {% if cheese.stock == 0 %}
@@ -37,9 +37,11 @@
                     <td> £{{ cheese.buying_cost }} </td>
                     <td> £{{ cheese.selling_price }} </td>
                     <td>
-                        <a href = "/cheeses/{{ cheese.id }}/edit-stock"> Edit stock </a>
+                        <a class="grid-main-side-buttons" href = "/cheeses/{{ cheese.id }}/edit-stock"> Edit stock </a>
+                        <br>
+                        <br>
                         <form action="/cheeses/{{ cheese.id }}/inventory-exclude" method="POST">
-                            <input type="submit" value="Exclude from inventory">
+                            <input class="grid-main-side-buttons" type="submit" value="Exclude from inventory">
                         </form>
                     </td>
                 </tr>
