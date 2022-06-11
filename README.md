@@ -7,6 +7,9 @@ This was my first app! 😊
 
 **Tech Stack:** Python3, HTML, CSS, Flask and PostgreSQL
 
+
+<img width="1399" alt="Screenshot 2022-06-11 at 20 09 08" src="https://user-images.githubusercontent.com/101068957/173203760-1e6d7ea6-9dfe-4256-b460-3c579bf5f0ba.png">
+
 ## Installs
 1. Make sure you have Python3, Flask, PostgreSQL amd psycopg2 all installed.
 2. Open the command line and navigate to the folder you want to store the app in.
