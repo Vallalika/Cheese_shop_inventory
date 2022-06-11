@@ -38,4 +38,4 @@ This was my first app! 😊
 
         http://127.0.0.1:4999/
 
-**The CheeseShop Inventory app should now fully be running in Chrome!**
+**The CheeseShop Inventory app should now be fully running in Chrome!**
