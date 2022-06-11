@@ -32,7 +32,7 @@ This was my first app! 😊
 1. Copy-paste the below in the command line, still in the app folder.
         
         flask run
-     *That should be Flask running now*
+     *That should be Flask running now.*
      
 2. Open Chrome and copy-paste the below in the address bar.
 
