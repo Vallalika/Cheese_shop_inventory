@@ -26,7 +26,8 @@ This was my first app! 😊
         
         python3 db_load.py
 ## Run
-1. Copy-paste the below in the command line, still in the app folder
+1. Copy-paste the below in the command line, still in the app folder.
+        
         flask run
      *That should be Flask running now*
      
