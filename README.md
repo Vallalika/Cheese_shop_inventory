@@ -36,6 +36,6 @@ This was my first app! 😊
      
 2. Open Chrome and copy-paste the below in the address bar.
 
-        http://127.0.0.1:4999/
+        http://localhost:4999/
 
 **The CheeseShop Inventory app should now be fully running in Chrome!**
