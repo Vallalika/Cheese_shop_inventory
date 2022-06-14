@@ -15,7 +15,7 @@ This was my first app! 😊
 2. Open the command line and navigate to the folder you want to store the app in.
 3. Copy-paste the below in your command line and press Return:
 
-        git clone https://github.com/Vallalika/Cheese_shop_inventory.git
+        git clone git@github.com:Vallalika/Cheese_shop_inventory.git
         
     *The app folder is now created and should be visible.*
 
